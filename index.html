@@ -2,7 +2,9 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#285740" />
+  <meta name="color-scheme" content="light" />
   <title>Social-Media-Startpaket — Kinderwunschzentrum Am Innsbrucker Platz</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;700&display=swap');
@@ -12,155 +14,165 @@
       --lind: #C8E4D1;
       --creme: #F5E9E2;
       --weiss: #FFFFFF;
-      --soft: rgba(40, 87, 64, .68);   /* Wald, leicht zurückgenommen — nur für Sekundärtext */
+      --soft: rgba(40, 87, 64, .80);   /* Sekundärtext: Wald, leicht heller — gut lesbar */
       --line: #C8E4D1;
       --font: 'Albert Sans', system-ui, -apple-system, sans-serif;
-      --shadow: 0 12px 32px rgba(40, 87, 64, .10);
-      --shadow-sm: 0 4px 14px rgba(40, 87, 64, .07);
+      --shadow: 0 14px 36px rgba(40, 87, 64, .10);
+      --shadow-sm: 0 4px 16px rgba(40, 87, 64, .07);
       --r-card: 16px;
       --r-hero: 24px;
       --r-sm: 8px;
       --r-full: 999px;
     }
     * { box-sizing: border-box; }
-    html { background: var(--creme); color: var(--wald); font-family: var(--font); -webkit-font-smoothing: antialiased; }
+    html {
+      background: var(--creme); color: var(--wald); font-family: var(--font);
+      scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
     body { margin: 0; line-height: 1.55; font-weight: 400; }
-    .page { max-width: 1120px; margin: 0 auto; padding: 32px 20px 72px; }
+    .page { max-width: 1120px; margin: 0 auto; padding: 28px 20px 40px; }
     .defs { position: absolute; width: 0; height: 0; overflow: hidden; }
 
-    h1, h2, h3 { font-weight: 700; letter-spacing: -.01em; margin: 0; }
-    h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.04; }
-    h2 { font-size: clamp(23px, 3vw, 31px); line-height: 1.1; }
-    h3 { font-size: 18px; margin-bottom: 8px; }
+    h1, h2, h3 { font-weight: 700; letter-spacing: -.015em; margin: 0; }
+    h1 { font-size: clamp(31px, 5vw, 50px); line-height: 1.05; }
+    h2 { font-size: clamp(22px, 2.8vw, 30px); line-height: 1.12; }
+    h3 { font-size: 17px; margin-bottom: 8px; }
     p { margin: 0 0 12px; }
     ul { margin: 0; padding-left: 0; list-style: none; }
-    li { position: relative; padding: 4px 0 4px 22px; }
-    li::before { content: ''; position: absolute; left: 2px; top: 13px; width: 7px; height: 7px; border-radius: 50%; background: var(--wald); }
+    li { position: relative; padding: 5px 0 5px 24px; }
+    li::before { content: ''; position: absolute; left: 3px; top: 14px; width: 7px; height: 7px; border-radius: 50%; background: var(--wald); }
     .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: 12px; font-weight: 700; }
 
     /* ---------- Header (Wald-Hero) ---------- */
-    header { background: var(--wald); color: var(--weiss); border-radius: var(--r-hero); padding: clamp(28px, 4.5vw, 48px); }
-    header .logo { height: 46px; width: auto; color: var(--weiss); display: block; margin-bottom: 28px; }
-    header .eyebrow { color: var(--lind); margin-bottom: 16px; }
-    header h1 { color: var(--weiss); max-width: 22ch; }
-    header .lead { font-weight: 300; font-size: clamp(17px, 2vw, 21px); color: rgba(255, 255, 255, .9); max-width: 60ch; margin: 18px 0 0; }
-    .top-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 32px; }
-    .metric { background: var(--lind); color: var(--wald); border-radius: var(--r-card); padding: 16px; }
-    .metric strong { display: block; font-size: 14px; font-weight: 700; margin-bottom: 4px; }
-    .metric span { font-size: 13.5px; font-weight: 400; line-height: 1.4; display: block; }
+    header { background: var(--wald); color: var(--weiss); border-radius: var(--r-hero); padding: clamp(26px, 4.5vw, 46px); box-shadow: var(--shadow); }
+    header .logo { height: 44px; width: auto; color: var(--weiss); display: block; margin-bottom: 26px; }
+    header .eyebrow { color: var(--lind); margin-bottom: 14px; }
+    header h1 { color: var(--weiss); max-width: 20ch; }
+    header .lead { font-weight: 300; font-size: clamp(16.5px, 2vw, 20px); line-height: 1.5; color: rgba(255, 255, 255, .92); max-width: 56ch; margin: 16px 0 0; }
+    .top-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 28px; }
+    .metric { background: var(--lind); color: var(--wald); border-radius: var(--r-card); padding: 15px 16px; }
+    .metric strong { display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; opacity: .9; margin-bottom: 5px; }
+    .metric span { font-size: 16px; font-weight: 700; line-height: 1.25; display: block; }
 
     /* ---------- Sections ---------- */
-    section { margin-top: 24px; background: var(--weiss); border: 1px solid var(--line); border-radius: var(--r-card); padding: clamp(24px, 3.2vw, 36px); box-shadow: var(--shadow-sm); }
-    .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 22px; }
-    .section-head .kicker { color: var(--soft); font-weight: 700; }
-    .section-head p { max-width: 62ch; color: var(--soft); font-weight: 300; margin: 8px 0 0; }
+    section { margin-top: 18px; background: var(--weiss); border: 1px solid var(--line); border-radius: var(--r-card); padding: clamp(22px, 3vw, 34px); box-shadow: var(--shadow-sm); }
+    .section-head { margin-bottom: 20px; }
+    .title-row { display: flex; align-items: center; gap: 12px; }
+    .sec-num { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--wald); color: var(--weiss); font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; justify-content: center; }
+    .section-head .desc { color: var(--soft); font-weight: 400; max-width: 64ch; margin: 12px 0 0; }
 
     .two { display: grid; grid-template-columns: 1.05fr .95fr; gap: 16px; }
     .box { background: var(--creme); border: 1px solid var(--line); border-radius: var(--r-card); padding: 20px; }
     .box.green { background: var(--lind); border-color: transparent; }
     .box p:last-child { margin-bottom: 0; }
     .lead-line { font-weight: 700; }
-    .muted { color: var(--soft); font-weight: 300; }
-    .quote { border-left: 4px solid var(--wald); background: var(--creme); border-radius: 0 var(--r-sm) var(--r-sm) 0; padding: 16px 18px; color: var(--wald); font-weight: 300; }
+    .muted { color: var(--soft); font-weight: 400; }
+    .quote { border-left: 4px solid var(--wald); background: var(--creme); border-radius: 0 var(--r-sm) var(--r-sm) 0; padding: 16px 18px; color: var(--soft); font-weight: 400; margin: 0; }
 
     /* ---------- Content-Säulen ---------- */
     .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-    .pillar { background: var(--creme); border: 1px solid var(--line); border-radius: var(--r-card); padding: 20px; min-height: 168px; }
+    .pillar { background: var(--creme); border: 1px solid var(--line); border-radius: var(--r-card); padding: 20px; }
     .pillar:nth-child(even) { background: var(--lind); border-color: transparent; }
-    .pillar .badge { width: 30px; height: 30px; border-radius: 50%; background: var(--wald); color: var(--weiss); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; margin-bottom: 14px; }
-    .pillar p { color: var(--soft); font-weight: 300; margin: 0; }
+    .pillar .badge { width: 30px; height: 30px; border-radius: 50%; background: var(--wald); color: var(--weiss); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; margin-bottom: 12px; }
+    .pillar p { color: var(--soft); font-weight: 400; margin: 0; }
 
     /* ---------- 4-Wochen-Plan ---------- */
     .calendar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .week { border: 1px solid var(--line); border-radius: var(--r-card); padding: 18px; background: var(--weiss); }
-    .week-label { color: var(--wald); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; padding-bottom: 12px; border-bottom: 2px solid var(--lind); margin-bottom: 4px; }
-    .mini-post { padding: 12px 0; border-top: 1px solid var(--line); }
+    .week-label { color: var(--wald); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; padding-bottom: 10px; border-bottom: 2px solid var(--lind); margin-bottom: 2px; }
+    .mini-post { padding: 13px 0; border-top: 1px solid var(--line); }
     .mini-post:first-of-type { border-top: 0; }
-    .mini-post strong { display: block; font-weight: 700; line-height: 1.25; margin-bottom: 4px; }
-    .mini-post small { color: var(--soft); font-weight: 300; }
+    .mini-post strong { display: block; font-weight: 700; line-height: 1.3; margin-bottom: 4px; }
+    .mini-post small { color: var(--soft); font-weight: 400; font-size: 13.5px; }
 
     /* ---------- Freigabe-Board ---------- */
-    .flow { counter-reset: step; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 20px; }
-    .flow .step { position: relative; padding: 16px 18px 18px; background: var(--creme); border: 1px solid var(--line); border-radius: var(--r-card); }
-    .flow .step::before { counter-increment: step; content: counter(step); display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--wald); color: var(--weiss); font-weight: 700; font-size: 14px; margin-bottom: 12px; }
-    .flow .step strong { display: block; font-weight: 700; margin-bottom: 4px; }
-    .flow .step span { color: var(--soft); font-weight: 300; font-size: 14px; }
+    .flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 18px; }
+    .flow .step { padding: 18px; background: var(--creme); border: 1px solid var(--line); border-radius: var(--r-card); }
+    .flow .step .n { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--wald); color: var(--weiss); font-weight: 700; font-size: 14px; margin-bottom: 12px; }
+    .flow .step strong { display: block; font-weight: 700; margin-bottom: 5px; }
+    .flow .step span { color: var(--soft); font-weight: 400; font-size: 14px; }
 
     .board-demo { background: var(--creme); border: 1px solid var(--line); border-radius: var(--r-card); padding: 18px; }
-    .board-card { display: grid; grid-template-columns: 220px 1fr; gap: 20px; background: var(--weiss); border: 1px solid var(--line); border-radius: var(--r-card); padding: 18px; }
-    .post-mock { aspect-ratio: 4/5; border-radius: var(--r-card); padding: 18px; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+    .board-card { display: grid; grid-template-columns: 210px 1fr; gap: 20px; background: var(--weiss); border: 1px solid var(--line); border-radius: var(--r-card); padding: 18px; align-items: start; }
+    .post-mock { aspect-ratio: 4/5; border-radius: var(--r-card); padding: 18px; display: flex; flex-direction: column; }
     .post-mock.creme { background: var(--creme); color: var(--wald); border: 1px solid var(--line); }
     .post-mock.wald { background: var(--wald); color: var(--weiss); }
-    .post-mock .series { font-size: 11px; letter-spacing: .13em; text-transform: uppercase; font-weight: 700; }
-    .post-mock.creme .series { color: var(--wald); }
+    .post-mock .series { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
     .post-mock.wald .series { color: var(--lind); }
-    .post-mock .headline { font-weight: 700; font-size: 22px; line-height: 1.1; }
-    .post-mock .mark { width: 30px; height: 30px; }
-    .post-mock.creme .mark { color: var(--wald); }
-    .post-mock.wald .mark { color: var(--weiss); }
-    .post-mock .foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; }
-    .post-mock .sub { font-size: 12px; font-weight: 300; max-width: 22ch; }
+    .post-mock .headline { font-weight: 700; font-size: 21px; line-height: 1.12; margin-top: 8px; }
+    .post-mock .foot { margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; }
+    .post-mock .sub { font-size: 12.5px; font-weight: 400; max-width: 24ch; }
     .post-mock.wald .sub { color: var(--lind); }
+    .post-mock .mark { width: 30px; height: 30px; flex: none; }
+    .post-mock.wald .mark { color: var(--weiss); }
+    .post-mock.creme .mark { color: var(--wald); }
 
-    .approvals { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
-    .pill { border-radius: var(--r-full); padding: 7px 14px; background: var(--lind); color: var(--wald); font-size: 13px; font-weight: 700; }
+    .approvals { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+    .pill { border-radius: var(--r-full); padding: 8px 15px; background: var(--lind); color: var(--wald); font-size: 13px; font-weight: 700; }
     .pill::before { content: '✓ '; }
-    .note-field { border: 1px dashed var(--line); border-radius: var(--r-sm); padding: 12px 14px; color: var(--soft); font-weight: 300; font-size: 13.5px; }
-    .footer-note { color: var(--soft); font-weight: 300; font-size: 14px; margin: 18px 0 0; }
+    .note-field { border: 1px dashed var(--wald); border-radius: var(--r-sm); padding: 13px 15px; color: var(--soft); font-weight: 400; font-size: 14px; }
+    .footer-note { color: var(--soft); font-weight: 400; font-size: 14px; margin: 18px 0 0; }
 
     /* ---------- 8 Beispielposts ---------- */
     .post-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
     .post-card { background: var(--weiss); border: 1px solid var(--line); border-radius: var(--r-card); overflow: hidden; box-shadow: var(--shadow-sm); }
-    .visual { min-height: 200px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+    .visual { min-height: 176px; padding: 22px; display: flex; flex-direction: column; }
     .visual.creme { background: var(--creme); color: var(--wald); border-bottom: 1px solid var(--line); }
     .visual.wald { background: var(--wald); color: var(--weiss); }
     .visual .series { font-size: 11px; text-transform: uppercase; letter-spacing: .13em; font-weight: 700; }
-    .visual.creme .series { color: var(--wald); }
     .visual.wald .series { color: var(--lind); }
-    .visual .headline { font-weight: 700; font-size: clamp(24px, 2.8vw, 32px); line-height: 1.04; max-width: 16ch; }
-    .visual .foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
-    .visual .sub { font-weight: 300; font-size: 13.5px; max-width: 30ch; }
+    .visual .headline { font-weight: 700; font-size: clamp(22px, 2.6vw, 29px); line-height: 1.08; margin-top: 9px; max-width: 18ch; }
+    .visual .foot { margin-top: auto; padding-top: 14px; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+    .visual .sub { font-weight: 400; font-size: 13.5px; line-height: 1.4; max-width: 32ch; color: var(--soft); }
     .visual.wald .sub { color: var(--lind); }
-    .visual.creme .sub { color: var(--soft); }
-    .visual .mark { width: 34px; height: 34px; flex: none; }
-    .visual.creme .mark { color: var(--wald); }
+    .visual .mark { width: 32px; height: 32px; flex: none; }
     .visual.wald .mark { color: var(--weiss); }
+    .visual.creme .mark { color: var(--wald); }
 
     .post-body { padding: 20px; }
     .post-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
-    .tag { border-radius: var(--r-full); padding: 5px 12px; background: var(--creme); border: 1px solid var(--line); color: var(--wald); font-size: 12px; font-weight: 700; }
-    .caption { color: var(--wald); font-weight: 300; font-size: 14.5px; }
+    .tag { border-radius: var(--r-full); padding: 6px 13px; background: var(--lind); color: var(--wald); font-size: 12px; font-weight: 700; }
+    .caption { color: var(--soft); font-weight: 400; font-size: 14.5px; line-height: 1.55; margin: 0; }
     .checks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 16px; }
-    .check-pill { border: 1px solid var(--line); border-radius: var(--r-sm); padding: 9px 8px; text-align: center; font-size: 13px; color: var(--soft); background: var(--creme); }
+    .check-pill { border: 1px solid var(--line); border-radius: var(--r-sm); padding: 10px 8px; text-align: center; font-size: 13px; font-weight: 700; color: var(--soft); background: var(--creme); }
     .check-pill::before { content: '\2610  '; color: var(--wald); font-weight: 700; }
-    .feedback { margin-top: 10px; font-size: 13px; color: var(--soft); font-weight: 300; border: 1px dashed var(--line); border-radius: var(--r-sm); padding: 10px 12px; }
+    .feedback { margin-top: 10px; font-size: 13px; color: var(--soft); font-weight: 400; border: 1px dashed var(--wald); border-radius: var(--r-sm); padding: 11px 13px; }
 
     /* ---------- Entscheidungen ---------- */
     .decision-list { display: grid; gap: 10px; }
     .decision-item { background: var(--creme); border: 1px solid var(--line); border-radius: var(--r-card); padding: 16px 18px; }
     .decision-item strong { font-weight: 700; }
-    .decision-item span { color: var(--soft); font-weight: 300; }
+    .decision-item span { color: var(--soft); font-weight: 400; }
+    .end-note { margin-top: 20px; color: var(--soft); font-weight: 400; font-size: 13.5px; }
 
-    .end-note { margin-top: 24px; color: var(--soft); font-weight: 300; font-size: 13.5px; text-align: center; }
+    /* ---------- Footer ---------- */
+    .page-foot { display: flex; align-items: center; gap: 14px; justify-content: center; text-align: center; flex-wrap: wrap; margin: 28px 8px 8px; color: var(--soft); font-weight: 400; font-size: 13px; }
+    .page-foot .mark { width: 30px; height: 30px; color: var(--wald); flex: none; }
 
     /* ---------- Responsive ---------- */
     @media (max-width: 980px) {
-      .top-grid, .pillars, .calendar, .flow, .post-grid { grid-template-columns: 1fr 1fr; }
+      .top-grid { grid-template-columns: 1fr 1fr; }
+      .pillars, .calendar, .flow, .post-grid { grid-template-columns: 1fr 1fr; }
       .two, .board-card { grid-template-columns: 1fr; }
-      .post-mock { max-width: 280px; }
-      .section-head { display: block; }
+      .board-card .post-mock { max-width: 260px; }
+    }
+    @media (min-width: 621px) {
+      .pillar { min-height: 168px; }
     }
     @media (max-width: 620px) {
-      .page { padding: 20px 14px 56px; }
-      header { padding: 26px 22px; border-radius: 20px; }
-      .top-grid, .pillars, .calendar, .flow, .post-grid { grid-template-columns: 1fr; }
-      .checks { grid-template-columns: 1fr 1fr; }
+      .page { padding: 18px 13px 32px; }
+      header { padding: 24px 20px; border-radius: 20px; }
+      .pillars, .calendar, .flow, .post-grid { grid-template-columns: 1fr; }
+      .top-grid { gap: 10px; }
+      section { margin-top: 14px; }
+      .post-mock { max-width: 300px; }
     }
     @media print {
       html, body { background: var(--weiss); }
       .page { padding: 0; max-width: none; }
       header, section { box-shadow: none; border-radius: 0; break-inside: avoid; margin-top: 12px; }
-      .post-card { break-inside: avoid; }
+      .post-card, .week, .pillar { break-inside: avoid; }
     }
   </style>
 </head>
@@ -177,17 +189,17 @@
       <h1>Social-Media-Start — mein Vorschlag zur Freigabe</h1>
       <p class="lead">Mein Vorschlag, wie wir auf Instagram beginnen: klar genug, um heute zu entscheiden — schlank genug für den Praxisalltag.</p>
       <div class="top-grid">
-        <div class="metric"><strong>Ziel heute</strong><span>Die Grundrichtung gemeinsam freigeben.</span></div>
-        <div class="metric"><strong>Im Paket</strong><span>8 Beispielposts für die ersten 4 Wochen.</span></div>
-        <div class="metric"><strong>Arbeitsweise</strong><span>Ein Freigabe-Board pro Monat — alles an einem Ort.</span></div>
-        <div class="metric"><strong>Aufwand</strong><span>30–45 Minuten zum Start, danach wenig pro Monat.</span></div>
+        <div class="metric"><strong>Ziel heute</strong><span>Grundrichtung freigeben</span></div>
+        <div class="metric"><strong>Im Paket</strong><span>8 Posts · 4 Wochen</span></div>
+        <div class="metric"><strong>Arbeitsweise</strong><span>1 Board pro Monat</span></div>
+        <div class="metric"><strong>Aufwand</strong><span>30–45 Min. zum Start</span></div>
       </div>
     </header>
 
     <section>
       <div class="section-head">
-        <h2><span class="kicker">1 · </span>Grundrichtung</h2>
-        <p>Der Account gibt Orientierung und schafft Vertrauen — ohne Erfolgsversprechen und ohne lauten Social-Media-Ton.</p>
+        <div class="title-row"><span class="sec-num">1</span><h2>Grundrichtung</h2></div>
+        <p class="desc">Der Account gibt Orientierung und schafft Vertrauen — ohne Erfolgsversprechen und ohne lauten Social-Media-Ton.</p>
       </div>
       <div class="two">
         <div class="box">
@@ -197,15 +209,15 @@
         </div>
         <div class="box green">
           <h3>Ton</h3>
-          <p>Warm, klar, fachlich fundiert und verstaendlich. Unaufgeregt statt reißerisch — nah, aber nie kumpelhaft.</p>
+          <p>Warm, klar, fachlich fundiert und verständlich. Unaufgeregt statt reißerisch — nah, aber nie kumpelhaft.</p>
         </div>
       </div>
     </section>
 
     <section>
       <div class="section-head">
-        <h2><span class="kicker">2 · </span>Leitplanken</h2>
-        <p>Die Kommunikation bleibt seriös, rechtlich vorsichtig und emotional sensibel.</p>
+        <div class="title-row"><span class="sec-num">2</span><h2>Leitplanken</h2></div>
+        <p class="desc">Die Kommunikation bleibt seriös, rechtlich vorsichtig und emotional sensibel.</p>
       </div>
       <div class="two">
         <div>
@@ -228,8 +240,8 @@
 
     <section>
       <div class="section-head">
-        <h2><span class="kicker">3 · </span>Vier Content-Säulen</h2>
-        <p>Wiederkehrende Formate senken den Aufwand: Patientinnen und Patienten wissen, was sie erwartet — das Team weiß, was zu produzieren ist.</p>
+        <div class="title-row"><span class="sec-num">3</span><h2>Vier Content-Säulen</h2></div>
+        <p class="desc">Wiederkehrende Formate senken den Aufwand: Patientinnen und Patienten wissen, was sie erwartet — das Team weiß, was zu produzieren ist.</p>
       </div>
       <div class="pillars">
         <div class="pillar"><div class="badge">A</div><h3>Orientierung</h3><p>Ersttermin, Unterlagen, Diagnostik, nächste Schritte.</p></div>
@@ -241,8 +253,8 @@
 
     <section>
       <div class="section-head">
-        <h2><span class="kicker">4 · </span>Erster 4-Wochen-Plan</h2>
-        <p>Mein Vorschlag: zwei Feed-Posts pro Woche — sichtbar genug und realistisch freizugeben.</p>
+        <div class="title-row"><span class="sec-num">4</span><h2>Erster 4-Wochen-Plan</h2></div>
+        <p class="desc">Mein Vorschlag: zwei Feed-Posts pro Woche — sichtbar genug und realistisch freizugeben.</p>
       </div>
       <div class="calendar">
         <div class="week"><div class="week-label">Woche 1</div><div class="mini-post"><strong>Willkommen / wofür die Praxis steht</strong><small>Haltung, Vertrauen, Auftakt.</small></div><div class="mini-post"><strong>Was passiert beim ersten Termin?</strong><small>Ablauf erklären, Hemmungen nehmen.</small></div></div>
@@ -254,23 +266,20 @@
 
     <section>
       <div class="section-head">
-        <h2><span class="kicker">5 · </span>Freigabe-Board statt verstreuter Abstimmung</h2>
-        <p>Jeder Monatsplan bekommt eine einfache Freigabeseite. Pro Post seht ihr Entwurf, Text und Status — und hakt direkt ab oder kommentiert.</p>
+        <div class="title-row"><span class="sec-num">5</span><h2>Freigabe-Board statt verstreuter Abstimmung</h2></div>
+        <p class="desc">Jeder Monatsplan bekommt eine einfache Freigabeseite. Pro Post seht ihr Entwurf, Text und Status — und hakt direkt ab oder kommentiert.</p>
       </div>
       <div class="flow">
-        <div class="step"><strong>Ich lege das Board an</strong><span>Den Monatsplan mit allen Posts als eine Seite — fertig zum Durchsehen.</span></div>
-        <div class="step"><strong>Ihr prüft pro Post</strong><span>Franzi, Claudia und Nora haken ab oder schreiben einen kurzen Änderungswunsch.</span></div>
-        <div class="step"><strong>Veröffentlicht wird nach Freigabe</strong><span>Ein Post geht erst live, wenn die nötigen Häkchen da sind.</span></div>
+        <div class="step"><span class="n">1</span><strong>Ich lege das Board an</strong><span>Den Monatsplan mit allen Posts als eine Seite — fertig zum Durchsehen.</span></div>
+        <div class="step"><span class="n">2</span><strong>Ihr prüft pro Post</strong><span>Franzi, Claudia und Nora haken ab oder schreiben einen kurzen Änderungswunsch.</span></div>
+        <div class="step"><span class="n">3</span><strong>Veröffentlicht wird nach Freigabe</strong><span>Ein Post geht erst live, wenn die nötigen Häkchen da sind.</span></div>
       </div>
       <div class="board-demo">
         <div class="board-card">
           <div class="post-mock wald">
             <div class="series">Beispielpost</div>
             <div class="headline">Was passiert beim ersten Termin?</div>
-            <div class="foot">
-              <div class="sub">Gespräch, Befunde, nächste Schritte.</div>
-              <svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg>
-            </div>
+            <div class="foot"><div class="sub">Gespräch, Befunde, nächste Schritte.</div><svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg></div>
           </div>
           <div>
             <h3>So sieht eine Post-Freigabe aus</h3>
@@ -280,103 +289,126 @@
           </div>
         </div>
       </div>
-      <p class="footer-note">MVP-Prinzip: erst als klares Freigabe-Board starten — kein Login, keine zusätzliche App. Wenn es sich bewährt, lassen sich Formular oder Status-Speicherung später ergaenzen.</p>
+      <p class="footer-note">MVP-Prinzip: erst als klares Freigabe-Board starten — kein Login, keine zusätzliche App. Wenn es sich bewährt, lassen sich Formular oder Status-Speicherung später ergänzen.</p>
     </section>
 
     <section>
       <div class="section-head">
-        <h2><span class="kicker">6 · </span>Acht Beispielposts</h2>
-        <p>Diese Beispiele zeigen Richtung, Ton und Format — noch keine finale medizinische Freigabe, sondern eine Grundlage zum Entscheiden.</p>
+        <div class="title-row"><span class="sec-num">6</span><h2>Acht Beispielposts</h2></div>
+        <p class="desc">Diese Beispiele zeigen Richtung, Ton und Format — noch keine finale medizinische Freigabe, sondern eine Grundlage zum Entscheiden.</p>
       </div>
       <div class="post-grid">
-
         <article class="post-card">
-          <div class="visual creme"><div class="series">Orientierung</div>
-            <div class="foot"><div><div class="headline">Willkommen am Innsbrucker Platz</div><div class="sub">Kinderwunschmedizin: erfahren, persönlich, von Ärztinnen geführt.</div></div><svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg></div>
+          <div class="visual creme">
+            <div class="series">Orientierung</div>
+            <div class="headline">Willkommen am Innsbrucker Platz</div>
+            <div class="foot"><div class="sub">Kinderwunschmedizin: erfahren, persönlich, von Ärztinnen geführt.</div><svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg></div>
           </div>
-          <div class="post-body"><div class="post-meta"><span class="tag">Woche 1</span><span class="tag">Auftakt</span></div>
+          <div class="post-body">
+            <div class="post-meta"><span class="tag">Woche 1</span><span class="tag">Auftakt</span></div>
             <p class="caption">Wir begleiten Sie mit medizinischer Erfahrung, klarer Diagnostik und persönlicher Beratung — Schritt für Schritt und ohne pauschale Versprechen.</p>
             <div class="checks"><div class="check-pill">Franzi</div><div class="check-pill">Claudia</div><div class="check-pill">Nora</div></div>
-            <div class="feedback">Kommentar / Änderungswunsch</div></div>
-        </article>
-
-        <article class="post-card">
-          <div class="visual wald"><div class="series">Ersttermin</div>
-            <div class="foot"><div><div class="headline">Was passiert beim ersten Termin?</div><div class="sub">Gespräch, Vorgeschichte, Befunde und sinnvolle nächste Schritte.</div></div><svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg></div>
+            <div class="feedback">Kommentar / Änderungswunsch</div>
           </div>
-          <div class="post-body"><div class="post-meta"><span class="tag">Woche 1</span><span class="tag">Orientierung</span></div>
+        </article>
+        <article class="post-card">
+          <div class="visual wald">
+            <div class="series">Ersttermin</div>
+            <div class="headline">Was passiert beim ersten Termin?</div>
+            <div class="foot"><div class="sub">Gespräch, Vorgeschichte, Befunde und sinnvolle nächste Schritte.</div><svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg></div>
+          </div>
+          <div class="post-body">
+            <div class="post-meta"><span class="tag">Woche 1</span><span class="tag">Orientierung</span></div>
             <p class="caption">Der erste Termin dient dem Kennenlernen und Einordnen: Was wurde schon untersucht? Welche Fragen sind offen? Was ist als Nächstes sinnvoll?</p>
             <div class="checks"><div class="check-pill">Franzi</div><div class="check-pill">Claudia</div><div class="check-pill">Nora</div></div>
-            <div class="feedback">Kommentar / Änderungswunsch</div></div>
-        </article>
-
-        <article class="post-card">
-          <div class="visual creme"><div class="series">Diagnostik</div>
-            <div class="foot"><div><div class="headline">Womit fangen wir an?</div><div class="sub">Kinderwunsch hat viele mögliche Ursachen — wir schauen auf das Ganze.</div></div><svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg></div>
+            <div class="feedback">Kommentar / Änderungswunsch</div>
           </div>
-          <div class="post-body"><div class="post-meta"><span class="tag">Woche 2</span><span class="tag">Medizin</span></div>
+        </article>
+        <article class="post-card">
+          <div class="visual creme">
+            <div class="series">Diagnostik</div>
+            <div class="headline">Womit fangen wir an?</div>
+            <div class="foot"><div class="sub">Kinderwunsch hat viele mögliche Ursachen — wir schauen auf das Ganze.</div><svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg></div>
+          </div>
+          <div class="post-body">
+            <div class="post-meta"><span class="tag">Woche 2</span><span class="tag">Medizin</span></div>
             <p class="caption">Je nach Situation spielen Zyklus, Hormone, Ultraschall, Eileiter, Spermiogramm und Vorerkrankungen eine Rolle. Ziel ist ein Bild, das zu Ihrer Situation passt.</p>
             <div class="checks"><div class="check-pill">Franzi</div><div class="check-pill">Claudia</div><div class="check-pill">Nora</div></div>
-            <div class="feedback">Kommentar / Änderungswunsch</div></div>
-        </article>
-
-        <article class="post-card">
-          <div class="visual wald"><div class="series">AMH-Wert</div>
-            <div class="foot"><div><div class="headline">Was sagt der AMH-Wert?</div><div class="sub">Und was sagt er ausdruecklich nicht?</div></div><svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg></div>
+            <div class="feedback">Kommentar / Änderungswunsch</div>
           </div>
-          <div class="post-body"><div class="post-meta"><span class="tag">Woche 2</span><span class="tag">Häufige Fragen</span></div>
+        </article>
+        <article class="post-card">
+          <div class="visual wald">
+            <div class="series">AMH-Wert</div>
+            <div class="headline">Was sagt der AMH-Wert?</div>
+            <div class="foot"><div class="sub">Und was sagt er ausdrücklich nicht?</div><svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg></div>
+          </div>
+          <div class="post-body">
+            <div class="post-meta"><span class="tag">Woche 2</span><span class="tag">Häufige Fragen</span></div>
             <p class="caption">Der AMH-Wert kann auf die Eizellreserve (ovarielle Reserve) hinweisen. Er ist aber keine alleinige Prognose und sollte immer mit Alter, Zyklus, Ultraschall und Vorgeschichte zusammen gesehen werden.</p>
             <div class="checks"><div class="check-pill">Franzi</div><div class="check-pill">Claudia</div><div class="check-pill">Nora</div></div>
-            <div class="feedback">Kommentar / Änderungswunsch</div></div>
-        </article>
-
-        <article class="post-card">
-          <div class="visual creme"><div class="series">Labor</div>
-            <div class="foot"><div><div class="headline">Was passiert im Hintergrund?</div><div class="sub">Sorgfalt, Qualitätssicherung und enge Zusammenarbeit.</div></div><svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg></div>
+            <div class="feedback">Kommentar / Änderungswunsch</div>
           </div>
-          <div class="post-body"><div class="post-meta"><span class="tag">Woche 3</span><span class="tag">Vertrauen</span></div>
+        </article>
+        <article class="post-card">
+          <div class="visual creme">
+            <div class="series">Labor</div>
+            <div class="headline">Was passiert im Hintergrund?</div>
+            <div class="foot"><div class="sub">Sorgfalt, Qualitätssicherung und enge Zusammenarbeit.</div><svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg></div>
+          </div>
+          <div class="post-body">
+            <div class="post-meta"><span class="tag">Woche 3</span><span class="tag">Vertrauen</span></div>
             <p class="caption">Im Labor greifen viele sorgfältige Schritte ineinander. Oft unsichtbar bleibt, wie eng Ärztinnen, Reproduktionsbiologie (Embryologie) und Praxisteam zusammenarbeiten.</p>
             <div class="checks"><div class="check-pill">Franzi</div><div class="check-pill">Claudia</div><div class="check-pill">Nora</div></div>
-            <div class="feedback">Kommentar / Änderungswunsch</div></div>
-        </article>
-
-        <article class="post-card">
-          <div class="visual wald"><div class="series">Spermiogramm</div>
-            <div class="foot"><div><div class="headline">Warum gehört es dazu?</div><div class="sub">Kinderwunsch betrifft beide — ganz ohne Schuldfrage.</div></div><svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg></div>
+            <div class="feedback">Kommentar / Änderungswunsch</div>
           </div>
-          <div class="post-body"><div class="post-meta"><span class="tag">Woche 3</span><span class="tag">Diagnostik</span></div>
+        </article>
+        <article class="post-card">
+          <div class="visual wald">
+            <div class="series">Spermiogramm</div>
+            <div class="headline">Warum gehört es dazu?</div>
+            <div class="foot"><div class="sub">Kinderwunsch betrifft beide — ganz ohne Schuldfrage.</div><svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg></div>
+          </div>
+          <div class="post-body">
+            <div class="post-meta"><span class="tag">Woche 3</span><span class="tag">Diagnostik</span></div>
             <p class="caption">Ein Spermiogramm — die Untersuchung des Spermas — gibt wichtige Hinweise und erspart Umwege. Es ist ein normaler Teil der Abklärung: sachlich, vertraulich und ohne Bewertung.</p>
             <div class="checks"><div class="check-pill">Franzi</div><div class="check-pill">Claudia</div><div class="check-pill">Nora</div></div>
-            <div class="feedback">Kommentar / Änderungswunsch</div></div>
-        </article>
-
-        <article class="post-card">
-          <div class="visual creme"><div class="series">Sorgen</div>
-            <div class="foot"><div><div class="headline">Bin ich zu früh — oder zu spät dran?</div><div class="sub">Drei Gedanken, die viele vor dem ersten Gespräch begleiten.</div></div><svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg></div>
+            <div class="feedback">Kommentar / Änderungswunsch</div>
           </div>
-          <div class="post-body"><div class="post-meta"><span class="tag">Woche 4</span><span class="tag">Entlastung</span></div>
+        </article>
+        <article class="post-card">
+          <div class="visual creme">
+            <div class="series">Sorgen</div>
+            <div class="headline">Bin ich zu früh — oder zu spät dran?</div>
+            <div class="foot"><div class="sub">Drei Gedanken, die viele vor dem ersten Gespräch begleiten.</div><svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg></div>
+          </div>
+          <div class="post-body">
+            <div class="post-meta"><span class="tag">Woche 4</span><span class="tag">Entlastung</span></div>
             <p class="caption">Viele kommen mit Unsicherheit: Ist der Zeitpunkt richtig? Was, wenn etwas auffällig ist? Was, wenn noch nichts entschieden werden muss? Genau dafür ist ein erstes Gespräch da.</p>
             <div class="checks"><div class="check-pill">Franzi</div><div class="check-pill">Claudia</div><div class="check-pill">Nora</div></div>
-            <div class="feedback">Kommentar / Änderungswunsch</div></div>
-        </article>
-
-        <article class="post-card">
-          <div class="visual wald"><div class="series">Team</div>
-            <div class="foot"><div><div class="headline">Drei Ärztinnen, ein gemeinsamer Anspruch</div><div class="sub">Erfahrung, fachlicher Austausch und persönliche Begleitung.</div></div><svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg></div>
+            <div class="feedback">Kommentar / Änderungswunsch</div>
           </div>
-          <div class="post-body"><div class="post-meta"><span class="tag">Woche 4</span><span class="tag">Team</span></div>
+        </article>
+        <article class="post-card">
+          <div class="visual wald">
+            <div class="series">Team</div>
+            <div class="headline">Drei Ärztinnen, ein gemeinsamer Anspruch</div>
+            <div class="foot"><div class="sub">Erfahrung, fachlicher Austausch und persönliche Begleitung.</div><svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg></div>
+          </div>
+          <div class="post-body">
+            <div class="post-meta"><span class="tag">Woche 4</span><span class="tag">Team</span></div>
             <p class="caption">Kinderwunschbehandlung braucht medizinische Präzision und gute Begleitung. Im Team ordnen wir Befunde, Optionen und nächste Schritte gemeinsam und sorgfältig ein.</p>
             <div class="checks"><div class="check-pill">Franzi</div><div class="check-pill">Claudia</div><div class="check-pill">Nora</div></div>
-            <div class="feedback">Kommentar / Änderungswunsch</div></div>
+            <div class="feedback">Kommentar / Änderungswunsch</div>
+          </div>
         </article>
-
       </div>
     </section>
 
     <section>
       <div class="section-head">
-        <h2><span class="kicker">7 · </span>Was heute entschieden werden soll</h2>
-        <p>Bitte gebt heute nur die Richtung frei — nicht jedes Detail der späteren Umsetzung.</p>
+        <div class="title-row"><span class="sec-num">7</span><h2>Was heute entschieden werden soll</h2></div>
+        <p class="desc">Bitte gebt heute nur die Richtung frei — nicht jedes Detail der späteren Umsetzung.</p>
       </div>
       <div class="decision-list">
         <div class="decision-item"><strong>1. Passt die Grundrichtung?</strong><br><span>Ruhig, professionell, vertrauensbildend, medizinisch sauber.</span></div>
@@ -387,6 +419,11 @@
       </div>
       <p class="end-note">Stand: 02.06.2026 · Entwurf zur internen Abstimmung · erstellt von Simon</p>
     </section>
+
+    <footer class="page-foot">
+      <svg class="mark" aria-hidden="true"><use href="#kwz-mark"/></svg>
+      <span>Kinderwunschzentrum Am Innsbrucker Platz · Hauptstr. 65, 12159 Berlin · +49 30 85757930</span>
+    </footer>
   </main>
 </body>
 </html>
