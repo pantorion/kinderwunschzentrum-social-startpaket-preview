@@ -12,60 +12,94 @@
       --muted: #6f625a;
       --line: #e8ddd2;
       --accent: #9f6b5f;
-      --accent-2: #5f746d;
-      --soft: #f3ebe2;
-      --soft-green: #edf2ee;
+      --accent-dark: #7e5147;
+      --green: #5f746d;
+      --green-soft: #edf2ee;
+      --rose-soft: #f5ece4;
+      --sand: #f3ebe2;
+      --white: #ffffff;
       --shadow: 0 22px 60px rgba(63, 47, 38, .10);
     }
     * { box-sizing: border-box; }
     html { background: var(--bg); color: var(--ink); font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     body { margin: 0; line-height: 1.5; }
-    .page { max-width: 1120px; margin: 0 auto; padding: 40px 22px 72px; }
-    header { background: linear-gradient(135deg, #fffdf9 0%, #f5ece4 100%); border: 1px solid var(--line); border-radius: 28px; padding: 38px; box-shadow: var(--shadow); }
-    .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .13em; font-size: 12px; font-weight: 700; margin-bottom: 18px; }
-    h1 { font-family: ui-serif, Georgia, "Times New Roman", serif; font-size: clamp(34px, 6vw, 68px); line-height: .95; letter-spacing: -.04em; margin: 0 0 22px; max-width: 900px; }
-    .lead { font-size: clamp(18px, 2.2vw, 24px); color: var(--muted); max-width: 850px; margin: 0; }
-    .decision-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
-    .decision { background: rgba(255,255,255,.72); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
-    .decision strong { display: block; font-size: 14px; margin-bottom: 4px; }
-    .decision span { color: var(--muted); font-size: 14px; }
-    section { margin-top: 28px; background: var(--paper); border: 1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: 0 12px 36px rgba(63, 47, 38, .055); }
-    h2 { font-size: 25px; letter-spacing: -.02em; margin: 0 0 16px; }
-    h3 { font-size: 17px; margin: 0 0 8px; }
+    .page { max-width: 1180px; margin: 0 auto; padding: 38px 20px 72px; }
+    header, section { border: 1px solid var(--line); box-shadow: var(--shadow); }
+    header { background: linear-gradient(135deg, #fffdf9 0%, #f5ece4 100%); border-radius: 30px; padding: clamp(26px, 5vw, 46px); }
+    .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .13em; font-size: 12px; font-weight: 800; margin-bottom: 18px; }
+    h1 { font-family: ui-serif, Georgia, "Times New Roman", serif; font-size: clamp(38px, 6.5vw, 76px); line-height: .94; letter-spacing: -.045em; margin: 0 0 22px; max-width: 980px; }
+    .lead { font-size: clamp(18px, 2.1vw, 24px); color: var(--muted); max-width: 900px; margin: 0; }
+    .top-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 30px; }
+    .metric { background: rgba(255,255,255,.74); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
+    .metric strong { display: block; font-size: 15px; margin-bottom: 4px; }
+    .metric span { color: var(--muted); font-size: 14px; }
+    section { margin-top: 26px; background: var(--paper); border-radius: 26px; padding: clamp(22px, 3.5vw, 34px); }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 18px; }
+    .section-head p { max-width: 680px; color: var(--muted); margin: 0; }
+    h2 { font-size: clamp(24px, 3vw, 34px); letter-spacing: -.03em; line-height: 1.05; margin: 0; }
+    h3 { font-size: 18px; letter-spacing: -.01em; margin: 0 0 8px; }
     p { margin: 0 0 12px; }
     ul, ol { margin: 0; padding-left: 20px; }
     li { margin: 6px 0; }
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .two { display: grid; grid-template-columns: 1.1fr .9fr; gap: 18px; }
+    .box { background: var(--sand); border-radius: 18px; padding: 18px; }
+    .box.green { background: var(--green-soft); }
+    .quote { border-left: 4px solid var(--accent); padding: 14px 16px; background: #faf4ee; border-radius: 14px; color: var(--muted); }
     .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-    .pillar { background: var(--soft); border-radius: 18px; padding: 18px; min-height: 190px; }
-    .pillar:nth-child(even) { background: var(--soft-green); }
-    .pillar .letter { width: 30px; height: 30px; border-radius: 50%; background: var(--ink); color: white; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 12px; }
+    .pillar { background: var(--sand); border-radius: 18px; padding: 18px; min-height: 172px; }
+    .pillar:nth-child(even) { background: var(--green-soft); }
+    .letter { width: 30px; height: 30px; border-radius: 50%; background: var(--ink); color: white; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; margin-bottom: 12px; }
     .calendar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
     .week { border: 1px solid var(--line); border-radius: 18px; padding: 16px; background: #fff; }
-    .week-label { color: var(--accent-2); font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px; }
-    .post { padding: 12px 0; border-top: 1px solid var(--line); }
-    .post:first-of-type { border-top: 0; padding-top: 0; }
-    .post-title { font-weight: 750; line-height: 1.25; margin-bottom: 5px; }
-    .post small { color: var(--muted); }
-    .quote { border-left: 4px solid var(--accent); padding: 12px 16px; background: #faf4ee; border-radius: 12px; color: var(--muted); }
-    .approval { counter-reset: step; display: grid; gap: 10px; }
-    .approval li { list-style: none; position: relative; padding: 14px 14px 14px 48px; background: var(--soft); border-radius: 14px; margin: 0; }
-    .approval li::before { counter-increment: step; content: counter(step); position: absolute; left: 14px; top: 13px; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-size: 13px; font-weight: 800; }
-    .checklist { display: grid; gap: 10px; }
-    .check { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
-    .check strong { color: var(--ink); }
+    .week-label { color: var(--green); font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 12px; }
+    .mini-post { padding: 12px 0; border-top: 1px solid var(--line); }
+    .mini-post:first-of-type { border-top: 0; padding-top: 0; }
+    .mini-post strong { display: block; line-height: 1.25; margin-bottom: 5px; }
+    .mini-post small { color: var(--muted); }
+    .approval-flow { counter-reset: step; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .approval-flow li { list-style: none; position: relative; padding: 42px 16px 16px; background: var(--sand); border-radius: 16px; margin: 0; min-height: 118px; }
+    .approval-flow li::before { counter-increment: step; content: counter(step); position: absolute; left: 16px; top: 14px; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-size: 13px; font-weight: 900; }
+    .board-demo { background: #f8f1ea; border: 1px solid var(--line); border-radius: 22px; padding: 18px; }
+    .board-card { display: grid; grid-template-columns: 230px 1fr; gap: 18px; background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
+    .phone { width: 100%; aspect-ratio: 4/5; border-radius: 24px; background: linear-gradient(160deg, #f7efe7, #e7ded5); border: 10px solid #2f2925; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; }
+    .phone .label { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-dark); font-weight: 900; }
+    .phone .title { font-family: ui-serif, Georgia, serif; font-size: 27px; line-height: 1.02; letter-spacing: -.04em; }
+    .phone .caption { font-size: 12px; color: var(--muted); }
+    .toggles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 12px 0; }
+    .toggle { border: 1px solid var(--line); background: var(--green-soft); border-radius: 999px; padding: 8px 10px; font-size: 13px; font-weight: 800; text-align: center; color: #40544e; }
+    textarea { width: 100%; min-height: 74px; border: 1px solid var(--line); border-radius: 14px; padding: 12px; font: inherit; color: var(--muted); background: #fffdf9; resize: vertical; }
+    .post-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .post-card { background: #fff; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; }
+    .visual { min-height: 210px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(145deg, var(--rose-soft), #fffaf4); }
+    .visual.green { background: linear-gradient(145deg, var(--green-soft), #fffaf4); }
+    .visual .series { font-size: 11px; text-transform: uppercase; letter-spacing: .13em; color: var(--accent-dark); font-weight: 900; }
+    .visual .headline { font-family: ui-serif, Georgia, serif; font-size: clamp(26px, 3vw, 38px); line-height: 1.02; letter-spacing: -.04em; max-width: 430px; }
+    .visual .sub { color: var(--muted); font-size: 14px; max-width: 430px; }
+    .post-body { padding: 18px; }
+    .post-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .tag { border-radius: 999px; padding: 5px 9px; background: var(--sand); color: var(--muted); font-size: 12px; font-weight: 800; }
+    .caption { color: var(--muted); font-size: 14px; }
+    .checks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; }
+    .check-pill { border: 1px solid var(--line); border-radius: 12px; padding: 9px 8px; text-align: center; font-size: 13px; color: var(--muted); background: #fffdf9; }
+    .check-pill::before { content: "□ "; color: var(--accent); font-weight: 900; }
+    .feedback { margin-top: 10px; font-size: 13px; color: var(--muted); border: 1px dashed var(--line); border-radius: 12px; padding: 10px; background: #fffdf9; }
+    .decision-list { display: grid; gap: 10px; }
+    .decision-item { background: #fff; border: 1px solid var(--line); border-radius: 15px; padding: 14px 16px; }
+    .decision-item strong { color: var(--ink); }
     .footer-note { color: var(--muted); font-size: 14px; margin-top: 18px; }
-    @media (max-width: 900px) {
-      header { padding: 28px; }
-      .decision-strip, .grid-2, .pillars, .calendar { grid-template-columns: 1fr; }
-      section { padding: 22px; }
+    @media (max-width: 980px) {
+      .top-grid, .pillars, .calendar, .approval-flow, .post-grid { grid-template-columns: 1fr; }
+      .two, .board-card { grid-template-columns: 1fr; }
+      .phone { max-width: 280px; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 10px; }
     }
     @media print {
       body { background: white; }
       .page { padding: 0; max-width: none; }
       header, section { box-shadow: none; break-inside: avoid; }
-      header { border-radius: 0; }
-      section { border-radius: 0; margin-top: 12px; }
+      header, section { border-radius: 0; margin-top: 12px; }
+      .post-card { break-inside: avoid; }
     }
   </style>
 </head>
@@ -74,114 +108,135 @@
     <header>
       <div class="eyebrow">Freigabevorlage · Social Media Start</div>
       <h1>Kinderwunschzentrum am Innsbrucker Platz — Social Media Startpaket</h1>
-      <p class="lead">Ein einfacher, professioneller und gut freigebbarer Start in regelmäßige Social-Media-Kommunikation: vertrauensbildend, medizinisch sauber und ohne zusätzlichen Overload für die Ärztinnen.</p>
-      <div class="decision-strip">
-        <div class="decision"><strong>Ziel</strong><span>Go/No-Go für die Grundrichtung und die ersten Inhalte.</span></div>
-        <div class="decision"><strong>Startumfang</strong><span>8 Posts für 4 Wochen, plus optionale einfache Stories.</span></div>
-        <div class="decision"><strong>Ärztinnen-Aufwand</strong><span>Einmalig ca. 30–45 Minuten Freigabe zum Start.</span></div>
+      <p class="lead">Vorschlag für einen ruhigen, professionellen Start auf Instagram: klar genug zur Entscheidung, schlank genug für den Praxisalltag.</p>
+      <div class="top-grid">
+        <div class="metric"><strong>Ziel heute</strong><span>Grundrichtung freigeben.</span></div>
+        <div class="metric"><strong>Startpaket</strong><span>8 Beispielposts für 4 Wochen.</span></div>
+        <div class="metric"><strong>Arbeitsweise</strong><span>Monatliches Freigabe-Board statt WhatsApp-Chaos.</span></div>
+        <div class="metric"><strong>Aufwand</strong><span>30–45 Minuten Prüfung zum Start.</span></div>
       </div>
     </header>
 
     <section>
-      <h2>1. Grundrichtung</h2>
-      <p>Der Instagram-Auftritt wird als ruhige, vertrauensbildende Verlängerung der Praxis positioniert:</p>
-      <p><strong>Moderne Kinderwunschmedizin in Berlin — frauengeführt, erfahren, persönlich begleitet.</strong></p>
-      <div class="grid-2">
+      <div class="section-head">
+        <h2>1. Grundrichtung</h2>
+        <p>Der Account soll Patient:innen Orientierung geben und Vertrauen aufbauen — ohne Erfolgsversprechen, ohne lauten Social-Media-Stil.</p>
+      </div>
+      <div class="two">
+        <div class="box">
+          <h3>Positionierung</h3>
+          <p><strong>Moderne Kinderwunschmedizin in Berlin — frauengeführt, erfahren, persönlich begleitet.</strong></p>
+          <p>Der Auftritt macht sichtbar, wie die Praxis denkt, arbeitet und Patient:innen durch komplexe Entscheidungen begleitet.</p>
+        </div>
+        <div class="box green">
+          <h3>Ton</h3>
+          <p>warm, klar, medizinisch fundiert, verständlich, unaufgeregt, nicht influencerig.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>2. Leitplanken</h2>
+        <p>Die Kommunikation bleibt seriös, rechtlich vorsichtig und emotional sensibel.</p>
+      </div>
+      <div class="two">
         <div>
-          <h3>Der Account soll Patient:innen helfen, …</h3>
+          <h3>Wir vermeiden</h3>
           <ul>
-            <li>den Ablauf besser zu verstehen,</li>
-            <li>typische Begriffe und Entscheidungen einzuordnen,</li>
-            <li>Hemmungen vor dem ersten Termin abzubauen,</li>
-            <li>das Team und die Arbeitsweise kennenzulernen.</li>
+            <li>Erfolgs- oder „Babyglück“-Versprechen</li>
+            <li>Wunderbaby-Erzählungen</li>
+            <li>Angst, Druck oder künstliche Dringlichkeit</li>
+            <li>individuelle Beratung in Kommentaren oder DMs</li>
+            <li>Patient:innenbeispiele ohne gesonderte Prüfung</li>
+            <li>unklare Erfolgsraten oder Vergleiche</li>
           </ul>
         </div>
         <div>
-          <h3>Ton</h3>
-          <p>warm, klar, medizinisch fundiert, verständlich, nicht werblich, nicht influencerig.</p>
+          <h3>Standardhinweis</h3>
+          <p class="quote">Diese Information ersetzt keine individuelle ärztliche Beratung. Persönliche Fragen und Befunde besprechen wir gerne in einem Termin.</p>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>2. Was wir bewusst vermeiden</h2>
-      <div class="grid-2">
-        <ul>
-          <li>Erfolgsversprechen oder „Babyglück“-Versprechen</li>
-          <li>Miracle-/Wunderbaby-Erzählungen</li>
-          <li>aggressive Dringlichkeit oder Angstkommunikation</li>
-        </ul>
-        <ul>
-          <li>individuelle medizinische Beratung in Kommentaren/DMs</li>
-          <li>Patient:innenbeispiele ohne gesonderte Prüfung</li>
-          <li>irreführende Erfolgsraten oder Vergleiche</li>
-        </ul>
+      <div class="section-head">
+        <h2>3. Vier Content-Säulen</h2>
+        <p>Wiederkehrende Formate reduzieren Aufwand: Patient:innen wissen, was sie erwartet; das Team weiß, was produziert werden muss.</p>
       </div>
-      <p class="quote">Diese Information ersetzt keine individuelle ärztliche Beratung. Persönliche Fragen und Befunde besprechen wir gerne in einem Termin.</p>
-    </section>
-
-    <section>
-      <h2>3. Vier Content-Säulen</h2>
       <div class="pillars">
-        <div class="pillar"><div class="letter">A</div><h3>Orientierung</h3><p>Was passiert beim ersten Termin? Welche Unterlagen? Wie läuft Diagnostik ab?</p></div>
-        <div class="pillar"><div class="letter">B</div><h3>Medizin einfach erklärt</h3><p>AMH, IVF, ICSI, IUI, Spermiogramm, Zyklusmonitoring — verständlich und korrekt.</p></div>
-        <div class="pillar"><div class="letter">C</div><h3>Vertrauen & Team</h3><p>Ärztinnen, Teamrollen, Labor/Embryologie, Sorgfalt und Zusammenarbeit sichtbar machen.</p></div>
-        <div class="pillar"><div class="letter">D</div><h3>Häufige Fragen</h3><p>Kosten, Dauer, Partner, unklare Befunde, Vorbereitung — wiederkehrende Fragen beantworten.</p></div>
+        <div class="pillar"><div class="letter">A</div><h3>Orientierung</h3><p>Ersttermin, Unterlagen, Diagnostik, nächste Schritte.</p></div>
+        <div class="pillar"><div class="letter">B</div><h3>Medizin einfach erklärt</h3><p>AMH, IVF, ICSI, IUI, Spermiogramm, Zyklusmonitoring.</p></div>
+        <div class="pillar"><div class="letter">C</div><h3>Vertrauen & Team</h3><p>Ärztinnen, Praxisteam, Labor, Sorgfalt, Zusammenarbeit.</p></div>
+        <div class="pillar"><div class="letter">D</div><h3>Häufige Fragen</h3><p>Kosten, Dauer, Partner, Vorbereitung, Unsicherheit.</p></div>
       </div>
     </section>
 
     <section>
-      <h2>4. Vorschlag für die ersten 4 Wochen</h2>
-      <p><strong>Minimaler Start-Rhythmus:</strong> 2 Feed-Posts pro Woche, also 8 Posts im ersten Monat. Optional ergänzend einfache Stories.</p>
+      <div class="section-head">
+        <h2>4. Erster 4-Wochen-Plan</h2>
+        <p>Vorschlag: 2 Feed-Posts pro Woche. Das ist sichtbar genug, aber realistisch freigebbar.</p>
+      </div>
       <div class="calendar">
-        <div class="week">
-          <div class="week-label">Woche 1</div>
-          <div class="post"><div class="post-title">Willkommen / wofür die Praxis steht</div><small>Auftakt, Haltung, Vertrauen.</small></div>
-          <div class="post"><div class="post-title">Was passiert beim ersten Termin?</div><small>Hemmungen reduzieren, Ablauf erklären.</small></div>
-        </div>
-        <div class="week">
-          <div class="week-label">Woche 2</div>
-          <div class="post"><div class="post-title">Kinderwunschdiagnostik: womit fangen wir an?</div><small>Zyklus, Hormone, Ultraschall, Spermiogramm.</small></div>
-          <div class="post"><div class="post-title">AMH: was der Wert sagt — und was nicht</div><small>Einordnung ohne Panik und ohne pauschale Prognosen.</small></div>
-        </div>
-        <div class="week">
-          <div class="week-label">Woche 3</div>
-          <div class="post"><div class="post-title">Das Labor: was passiert im Hintergrund?</div><small>Sorgfalt, Identitätssicherheit, Teamarbeit.</small></div>
-          <div class="post"><div class="post-title">Warum ein Spermiogramm dazugehört</div><small>Sachlich, entstigmatisierend, ohne Schuldzuweisung.</small></div>
-        </div>
-        <div class="week">
-          <div class="week-label">Woche 4</div>
-          <div class="post"><div class="post-title">Drei häufige Sorgen vor dem Erstgespräch</div><small>Emotionale Entlastung und Orientierung.</small></div>
-          <div class="post"><div class="post-title">Team-/Ärztinnenvorstellung</div><small>Nähe, Vertrauen, Schwerpunkte, Haltung.</small></div>
-        </div>
+        <div class="week"><div class="week-label">Woche 1</div><div class="mini-post"><strong>Willkommen / wofür die Praxis steht</strong><small>Haltung, Vertrauen, Auftakt.</small></div><div class="mini-post"><strong>Was passiert beim ersten Termin?</strong><small>Ablauf erklären, Hemmungen reduzieren.</small></div></div>
+        <div class="week"><div class="week-label">Woche 2</div><div class="mini-post"><strong>Kinderwunschdiagnostik: womit fangen wir an?</strong><small>Zyklus, Hormone, Ultraschall, Spermiogramm.</small></div><div class="mini-post"><strong>AMH: was der Wert sagt — und was nicht</strong><small>Einordnung ohne Panik.</small></div></div>
+        <div class="week"><div class="week-label">Woche 3</div><div class="mini-post"><strong>Das Labor: was passiert im Hintergrund?</strong><small>Sorgfalt, Qualität, Teamarbeit.</small></div><div class="mini-post"><strong>Warum ein Spermiogramm dazugehört</strong><small>Sachlich und entstigmatisierend.</small></div></div>
+        <div class="week"><div class="week-label">Woche 4</div><div class="mini-post"><strong>Drei Sorgen vor dem Erstgespräch</strong><small>Emotionale Entlastung.</small></div><div class="mini-post"><strong>Team-/Ärztinnenvorstellung</strong><small>Nähe, Schwerpunkte, Haltung.</small></div></div>
       </div>
     </section>
 
     <section>
-      <h2>5. Freigabeprozess — möglichst einfach</h2>
-      <ol class="approval">
-        <li>Content-Entwürfe werden gesammelt vorbereitet.</li>
-        <li>Eine Ärztin prüft medizinische Korrektheit.</li>
-        <li>Eine Person prüft Praxisdetails: Namen, Abläufe, Ton, Kontaktinfos.</li>
-        <li>Nach Freigabe werden die Posts geplant und veröffentlicht.</li>
-      </ol>
+      <div class="section-head">
+        <h2>5. Freigabe-Board statt WhatsApp-Abstimmung</h2>
+        <p>In der Umsetzung bekommt jeder Monatsplan eine einfache HTML-Freigabeseite. Pro Post ist sichtbar: Entwurf, Caption, Status, Freigaben und Kommentare.</p>
+      </div>
+      <div class="board-demo">
+        <div class="board-card">
+          <div class="phone">
+            <div class="label">Beispielpost</div>
+            <div class="title">Was passiert beim ersten Termin?</div>
+            <div class="caption">Kurz erklärt: Gespräch, Befunde, Untersuchung, nächste Schritte.</div>
+          </div>
+          <div>
+            <h3>So könnte eine Post-Freigabe aussehen</h3>
+            <p>Die Ärztinnen prüfen nicht abstrakt einen Kalender, sondern sehen den konkreten Post so, wie er ungefähr veröffentlicht wird.</p>
+            <div class="toggles"><div class="toggle">Franzi ✓</div><div class="toggle">Claudia ✓</div><div class="toggle">Nora ✓</div></div>
+            <textarea readonly>Kommentar / Änderungswunsch: z. B. „Bitte AMH-Formulierung medizinisch genauer.“</textarea>
+          </div>
+        </div>
+      </div>
+      <p class="footer-note">MVP-Prinzip: erst als klares Freigabe-Board starten. Kein Login, keine komplexe Software, keine zusätzliche App. Wenn es sich bewährt, kann später ein Formular oder Status-Speicherung ergänzt werden.</p>
     </section>
 
     <section>
-      <h2>6. Was wir jetzt entscheiden müssen</h2>
-      <div class="checklist">
-        <div class="check"><strong>1. Passt die Grundrichtung?</strong><br>Ruhig, professionell, vertrauensbildend, nicht influencerig.</div>
-        <div class="check"><strong>2. Sind die vier Content-Säulen passend?</strong><br>Orientierung, Medizin einfach erklärt, Vertrauen & Team, häufige Fragen.</div>
-        <div class="check"><strong>3. Welche der ersten 8 Themen sollen wir zuerst ausarbeiten?</strong><br>Vorschlag: alle 8 als erstes Monatspaket.</div>
-        <div class="check"><strong>4. Wer übernimmt die medizinische Freigabe?</strong><br>Eine Ärztin pro Monat reicht als Start.</div>
-        <div class="check"><strong>5. Dürfen wir mit einem ersten 4-Wochen-Paket starten?</strong><br>Danach kurze Auswertung und Anpassung.</div>
+      <div class="section-head">
+        <h2>6. Acht Beispielposts</h2>
+        <p>Diese Beispiele zeigen Richtung, Ton und Format. Sie sind noch keine finale medizinische Freigabe, sondern eine Entscheidungsgrundlage.</p>
+      </div>
+      <div class="post-grid">
+        <article class="post-card"><div class="visual"><div class="series">Orientierung</div><div class="headline">Willkommen am Innsbrucker Platz</div><div class="sub">Kinderwunschmedizin: erfahren, persönlich, frauengeführt.</div></div><div class="post-body"><div class="post-meta"><span class="tag">Woche 1</span><span class="tag">Auftakt</span></div><p class="caption">Wir begleiten Patient:innen mit medizinischer Erfahrung, klarer Diagnostik und persönlicher Beratung — Schritt für Schritt und ohne pauschale Versprechen.</p><div class="checks"><div class="check-pill">Franzi</div><div class="check-pill">Claudia</div><div class="check-pill">Nora</div></div><div class="feedback">Kommentar / Änderungswunsch</div></div></article>
+        <article class="post-card"><div class="visual green"><div class="series">Ersttermin</div><div class="headline">Was passiert beim ersten Termin?</div><div class="sub">Gespräch, Vorgeschichte, Befunde und sinnvolle nächste Schritte.</div></div><div class="post-body"><div class="post-meta"><span class="tag">Woche 1</span><span class="tag">Orientierung</span></div><p class="caption">Der erste Termin dient dem Kennenlernen und Einordnen: Was wurde bereits untersucht? Welche Fragen sind offen? Welche Diagnostik ist als Nächstes sinnvoll?</p><div class="checks"><div class="check-pill">Franzi</div><div class="check-pill">Claudia</div><div class="check-pill">Nora</div></div><div class="feedback">Kommentar / Änderungswunsch</div></div></article>
+        <article class="post-card"><div class="visual"><div class="series">Diagnostik</div><div class="headline">Womit fangen wir an?</div><div class="sub">Kinderwunschdiagnostik betrachtet mehrere Faktoren gemeinsam.</div></div><div class="post-body"><div class="post-meta"><span class="tag">Woche 2</span><span class="tag">Medizin</span></div><p class="caption">Je nach Situation können Zyklus, Hormone, Ultraschall, Eileiter, Spermiogramm und Vorerkrankungen eine Rolle spielen. Ziel ist ein Bild, das zur individuellen Situation passt.</p><div class="checks"><div class="check-pill">Franzi</div><div class="check-pill">Claudia</div><div class="check-pill">Nora</div></div><div class="feedback">Kommentar / Änderungswunsch</div></div></article>
+        <article class="post-card"><div class="visual green"><div class="series">AMH</div><div class="headline">Was sagt der AMH-Wert?</div><div class="sub">Und was sagt er ausdrücklich nicht?</div></div><div class="post-body"><div class="post-meta"><span class="tag">Woche 2</span><span class="tag">FAQ</span></div><p class="caption">Der AMH-Wert kann Hinweise auf die ovarielle Reserve geben. Er ist aber keine alleinige Prognose und sollte immer im Zusammenhang mit Alter, Zyklus, Ultraschall und Vorgeschichte gesehen werden.</p><div class="checks"><div class="check-pill">Franzi</div><div class="check-pill">Claudia</div><div class="check-pill">Nora</div></div><div class="feedback">Kommentar / Änderungswunsch</div></div></article>
+        <article class="post-card"><div class="visual"><div class="series">Labor</div><div class="headline">Was passiert im Hintergrund?</div><div class="sub">Embryologie, Sorgfalt, Identitätssicherheit, Teamarbeit.</div></div><div class="post-body"><div class="post-meta"><span class="tag">Woche 3</span><span class="tag">Vertrauen</span></div><p class="caption">Im Labor greifen viele sorgfältige Schritte ineinander. Für Patient:innen ist oft unsichtbar, wie eng Ärztinnen, Biologie/Embryologie und Praxisteam zusammenarbeiten.</p><div class="checks"><div class="check-pill">Franzi</div><div class="check-pill">Claudia</div><div class="check-pill">Nora</div></div><div class="feedback">Kommentar / Änderungswunsch</div></div></article>
+        <article class="post-card"><div class="visual green"><div class="series">Spermiogramm</div><div class="headline">Warum gehört es dazu?</div><div class="sub">Kinderwunschdiagnostik betrifft beide Seiten — ohne Schuldzuweisung.</div></div><div class="post-body"><div class="post-meta"><span class="tag">Woche 3</span><span class="tag">Diagnostik</span></div><p class="caption">Ein Spermiogramm kann wichtige Hinweise geben und unnötige Umwege vermeiden. Es ist ein normaler Teil der Abklärung — sachlich, vertraulich und ohne Bewertung.</p><div class="checks"><div class="check-pill">Franzi</div><div class="check-pill">Claudia</div><div class="check-pill">Nora</div></div><div class="feedback">Kommentar / Änderungswunsch</div></div></article>
+        <article class="post-card"><div class="visual"><div class="series">Sorgen</div><div class="headline">Bin ich zu früh — oder zu spät?</div><div class="sub">Drei häufige Gedanken vor dem Erstgespräch.</div></div><div class="post-body"><div class="post-meta"><span class="tag">Woche 4</span><span class="tag">Entlastung</span></div><p class="caption">Viele kommen mit Unsicherheit: Ist der Zeitpunkt richtig? Was, wenn etwas auffällig ist? Was, wenn noch gar nichts entschieden werden kann? Genau dafür ist ein erstes Gespräch da.</p><div class="checks"><div class="check-pill">Franzi</div><div class="check-pill">Claudia</div><div class="check-pill">Nora</div></div><div class="feedback">Kommentar / Änderungswunsch</div></div></article>
+        <article class="post-card"><div class="visual green"><div class="series">Team</div><div class="headline">Drei Ärztinnen, ein gemeinsamer Standard</div><div class="sub">Erfahrung, Austausch und persönliche Begleitung.</div></div><div class="post-body"><div class="post-meta"><span class="tag">Woche 4</span><span class="tag">Team</span></div><p class="caption">Kinderwunschbehandlung braucht medizinische Präzision und gute Begleitung. Im Team werden Befunde, Optionen und nächste Schritte sorgfältig eingeordnet.</p><div class="checks"><div class="check-pill">Franzi</div><div class="check-pill">Claudia</div><div class="check-pill">Nora</div></div><div class="feedback">Kommentar / Änderungswunsch</div></div></article>
       </div>
     </section>
 
     <section>
-      <h2>7. Nächster Schritt nach Go</h2>
-      <p>Nach Freigabe der Richtung erstellen wir finale Captions, einfache Bild-/Carousel-Ideen, Story-Vorlagen, einen Veröffentlichungsplan und Standardantworten für Kommentare/DMs.</p>
-      <p><strong>Empfehlung:</strong> mit einem kleinen, sauberen Startpaket live gehen — nicht auf die perfekte Gesamtstrategie warten.</p>
+      <div class="section-head">
+        <h2>7. Was heute entschieden werden soll</h2>
+        <p>Bitte nur die Richtung freigeben — nicht jedes Detail der späteren Umsetzung.</p>
+      </div>
+      <div class="decision-list">
+        <div class="decision-item"><strong>1. Passt die Grundrichtung?</strong><br>Ruhig, professionell, vertrauensbildend, medizinisch sauber.</div>
+        <div class="decision-item"><strong>2. Sind die vier Content-Säulen passend?</strong><br>Orientierung, Medizin einfach erklärt, Vertrauen & Team, häufige Fragen.</div>
+        <div class="decision-item"><strong>3. Dürfen wir die ersten 8 Posts als Startpaket ausarbeiten?</strong><br>Finale Captions, Visuals/Carousels, Story-Ideen.</div>
+        <div class="decision-item"><strong>4. Ist das Freigabe-Board als Arbeitsweise sinnvoll?</strong><br>Ein Board pro Monat; Freigaben und Kommentare direkt am jeweiligen Post.</div>
+        <div class="decision-item"><strong>5. Wer gibt medizinisch frei?</strong><br>Vorschlag: Franzi, Claudia und Nora können kommentieren; finaler Go erst nach den relevanten Häkchen.</div>
+      </div>
       <p class="footer-note">Stand: 01.06.2026 · Entwurf zur internen Abstimmung</p>
     </section>
   </main>
