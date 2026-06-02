@@ -27,7 +27,7 @@
     header, section { border: 1px solid var(--line); box-shadow: var(--shadow); }
     header { background: linear-gradient(135deg, #fffdf9 0%, #f5ece4 100%); border-radius: 30px; padding: clamp(26px, 5vw, 46px); }
     .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .13em; font-size: 12px; font-weight: 800; margin-bottom: 18px; }
-    h1 { font-family: ui-serif, Georgia, "Times New Roman", serif; font-size: clamp(38px, 6.5vw, 76px); line-height: .94; letter-spacing: -.045em; margin: 0 0 22px; max-width: 980px; }
+    h1 { font-family: ui-serif, Georgia, "Times New Roman", serif; font-size: clamp(38px, 6.5vw, 76px); line-height: .94; letter-spacing: -.045em; margin: 0 0 22px; max-width: 980px; overflow-wrap: break-word; word-break: normal; hyphens: auto; }
     .lead { font-size: clamp(18px, 2.1vw, 24px); color: var(--muted); max-width: 900px; margin: 0; }
     .top-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 30px; }
     .metric { background: rgba(255,255,255,.74); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
@@ -94,6 +94,14 @@
       .section-head { display: block; }
       .section-head p { margin-top: 10px; }
     }
+    @media (max-width: 560px) {
+      .page { padding: 22px 14px 56px; }
+      header { border-radius: 24px; padding: 28px 24px; }
+      h1 { font-size: clamp(34px, 11vw, 46px); line-height: 1; letter-spacing: -.055em; overflow-wrap: anywhere; }
+      .lead { font-size: 18px; }
+      .top-grid { gap: 12px; }
+      section { border-radius: 22px; }
+    }
     @media print {
       body { background: white; }
       .page { padding: 0; max-width: none; }
@@ -108,9 +116,9 @@
     <header>
       <div class="eyebrow">Freigabevorlage · Social Media Start</div>
       <h1>Kinderwunschzentrum am Innsbrucker Platz — Social Media Startpaket</h1>
-      <p class="lead">Vorschlag für einen ruhigen, professionellen Start auf Instagram: klar genug zur Entscheidung, schlank genug für den Praxisalltag.</p>
+      <p class="lead">Mein Vorschlag für einen ruhigen, professionellen Start auf Instagram: klar genug zur Entscheidung, schlank genug für den Praxisalltag.</p>
       <div class="top-grid">
-        <div class="metric"><strong>Ziel heute</strong><span>Grundrichtung freigeben.</span></div>
+        <div class="metric"><strong>Ziel heute</strong><span>Grundrichtung prüfen und freigeben.</span></div>
         <div class="metric"><strong>Startpaket</strong><span>8 Beispielposts für 4 Wochen.</span></div>
         <div class="metric"><strong>Arbeitsweise</strong><span>Monatliches Freigabe-Board statt WhatsApp-Chaos.</span></div>
         <div class="metric"><strong>Aufwand</strong><span>30–45 Minuten Prüfung zum Start.</span></div>
