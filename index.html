@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kinderwunschzentrum — Social Media Startpaket</title>
+  <style>
+    :root {
+      --bg: #fbf7f2;
+      --paper: #fffdf9;
+      --ink: #2f2925;
+      --muted: #6f625a;
+      --line: #e8ddd2;
+      --accent: #9f6b5f;
+      --accent-2: #5f746d;
+      --soft: #f3ebe2;
+      --soft-green: #edf2ee;
+      --shadow: 0 22px 60px rgba(63, 47, 38, .10);
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--bg); color: var(--ink); font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    body { margin: 0; line-height: 1.5; }
+    .page { max-width: 1120px; margin: 0 auto; padding: 40px 22px 72px; }
+    header { background: linear-gradient(135deg, #fffdf9 0%, #f5ece4 100%); border: 1px solid var(--line); border-radius: 28px; padding: 38px; box-shadow: var(--shadow); }
+    .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .13em; font-size: 12px; font-weight: 700; margin-bottom: 18px; }
+    h1 { font-family: ui-serif, Georgia, "Times New Roman", serif; font-size: clamp(34px, 6vw, 68px); line-height: .95; letter-spacing: -.04em; margin: 0 0 22px; max-width: 900px; }
+    .lead { font-size: clamp(18px, 2.2vw, 24px); color: var(--muted); max-width: 850px; margin: 0; }
+    .decision-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+    .decision { background: rgba(255,255,255,.72); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
+    .decision strong { display: block; font-size: 14px; margin-bottom: 4px; }
+    .decision span { color: var(--muted); font-size: 14px; }
+    section { margin-top: 28px; background: var(--paper); border: 1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: 0 12px 36px rgba(63, 47, 38, .055); }
+    h2 { font-size: 25px; letter-spacing: -.02em; margin: 0 0 16px; }
+    h3 { font-size: 17px; margin: 0 0 8px; }
+    p { margin: 0 0 12px; }
+    ul, ol { margin: 0; padding-left: 20px; }
+    li { margin: 6px 0; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .pillar { background: var(--soft); border-radius: 18px; padding: 18px; min-height: 190px; }
+    .pillar:nth-child(even) { background: var(--soft-green); }
+    .pillar .letter { width: 30px; height: 30px; border-radius: 50%; background: var(--ink); color: white; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 12px; }
+    .calendar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .week { border: 1px solid var(--line); border-radius: 18px; padding: 16px; background: #fff; }
+    .week-label { color: var(--accent-2); font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px; }
+    .post { padding: 12px 0; border-top: 1px solid var(--line); }
+    .post:first-of-type { border-top: 0; padding-top: 0; }
+    .post-title { font-weight: 750; line-height: 1.25; margin-bottom: 5px; }
+    .post small { color: var(--muted); }
+    .quote { border-left: 4px solid var(--accent); padding: 12px 16px; background: #faf4ee; border-radius: 12px; color: var(--muted); }
+    .approval { counter-reset: step; display: grid; gap: 10px; }
+    .approval li { list-style: none; position: relative; padding: 14px 14px 14px 48px; background: var(--soft); border-radius: 14px; margin: 0; }
+    .approval li::before { counter-increment: step; content: counter(step); position: absolute; left: 14px; top: 13px; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-size: 13px; font-weight: 800; }
+    .checklist { display: grid; gap: 10px; }
+    .check { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+    .check strong { color: var(--ink); }
+    .footer-note { color: var(--muted); font-size: 14px; margin-top: 18px; }
+    @media (max-width: 900px) {
+      header { padding: 28px; }
+      .decision-strip, .grid-2, .pillars, .calendar { grid-template-columns: 1fr; }
+      section { padding: 22px; }
+    }
+    @media print {
+      body { background: white; }
+      .page { padding: 0; max-width: none; }
+      header, section { box-shadow: none; break-inside: avoid; }
+      header { border-radius: 0; }
+      section { border-radius: 0; margin-top: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="eyebrow">Freigabevorlage · Social Media Start</div>
+      <h1>Kinderwunschzentrum am Innsbrucker Platz — Social Media Startpaket</h1>
+      <p class="lead">Ein einfacher, professioneller und gut freigebbarer Start in regelmäßige Social-Media-Kommunikation: vertrauensbildend, medizinisch sauber und ohne zusätzlichen Overload für die Ärztinnen.</p>
+      <div class="decision-strip">
+        <div class="decision"><strong>Ziel</strong><span>Go/No-Go für die Grundrichtung und die ersten Inhalte.</span></div>
+        <div class="decision"><strong>Startumfang</strong><span>8 Posts für 4 Wochen, plus optionale einfache Stories.</span></div>
+        <div class="decision"><strong>Ärztinnen-Aufwand</strong><span>Einmalig ca. 30–45 Minuten Freigabe zum Start.</span></div>
+      </div>
+    </header>
+
+    <section>
+      <h2>1. Grundrichtung</h2>
+      <p>Der Instagram-Auftritt wird als ruhige, vertrauensbildende Verlängerung der Praxis positioniert:</p>
+      <p><strong>Moderne Kinderwunschmedizin in Berlin — frauengeführt, erfahren, persönlich begleitet.</strong></p>
+      <div class="grid-2">
+        <div>
+          <h3>Der Account soll Patient:innen helfen, …</h3>
+          <ul>
+            <li>den Ablauf besser zu verstehen,</li>
+            <li>typische Begriffe und Entscheidungen einzuordnen,</li>
+            <li>Hemmungen vor dem ersten Termin abzubauen,</li>
+            <li>das Team und die Arbeitsweise kennenzulernen.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Ton</h3>
+          <p>warm, klar, medizinisch fundiert, verständlich, nicht werblich, nicht influencerig.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Was wir bewusst vermeiden</h2>
+      <div class="grid-2">
+        <ul>
+          <li>Erfolgsversprechen oder „Babyglück“-Versprechen</li>
+          <li>Miracle-/Wunderbaby-Erzählungen</li>
+          <li>aggressive Dringlichkeit oder Angstkommunikation</li>
+        </ul>
+        <ul>
+          <li>individuelle medizinische Beratung in Kommentaren/DMs</li>
+          <li>Patient:innenbeispiele ohne gesonderte Prüfung</li>
+          <li>irreführende Erfolgsraten oder Vergleiche</li>
+        </ul>
+      </div>
+      <p class="quote">Diese Information ersetzt keine individuelle ärztliche Beratung. Persönliche Fragen und Befunde besprechen wir gerne in einem Termin.</p>
+    </section>
+
+    <section>
+      <h2>3. Vier Content-Säulen</h2>
+      <div class="pillars">
+        <div class="pillar"><div class="letter">A</div><h3>Orientierung</h3><p>Was passiert beim ersten Termin? Welche Unterlagen? Wie läuft Diagnostik ab?</p></div>
+        <div class="pillar"><div class="letter">B</div><h3>Medizin einfach erklärt</h3><p>AMH, IVF, ICSI, IUI, Spermiogramm, Zyklusmonitoring — verständlich und korrekt.</p></div>
+        <div class="pillar"><div class="letter">C</div><h3>Vertrauen & Team</h3><p>Ärztinnen, Teamrollen, Labor/Embryologie, Sorgfalt und Zusammenarbeit sichtbar machen.</p></div>
+        <div class="pillar"><div class="letter">D</div><h3>Häufige Fragen</h3><p>Kosten, Dauer, Partner, unklare Befunde, Vorbereitung — wiederkehrende Fragen beantworten.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. Vorschlag für die ersten 4 Wochen</h2>
+      <p><strong>Minimaler Start-Rhythmus:</strong> 2 Feed-Posts pro Woche, also 8 Posts im ersten Monat. Optional ergänzend einfache Stories.</p>
+      <div class="calendar">
+        <div class="week">
+          <div class="week-label">Woche 1</div>
+          <div class="post"><div class="post-title">Willkommen / wofür die Praxis steht</div><small>Auftakt, Haltung, Vertrauen.</small></div>
+          <div class="post"><div class="post-title">Was passiert beim ersten Termin?</div><small>Hemmungen reduzieren, Ablauf erklären.</small></div>
+        </div>
+        <div class="week">
+          <div class="week-label">Woche 2</div>
+          <div class="post"><div class="post-title">Kinderwunschdiagnostik: womit fangen wir an?</div><small>Zyklus, Hormone, Ultraschall, Spermiogramm.</small></div>
+          <div class="post"><div class="post-title">AMH: was der Wert sagt — und was nicht</div><small>Einordnung ohne Panik und ohne pauschale Prognosen.</small></div>
+        </div>
+        <div class="week">
+          <div class="week-label">Woche 3</div>
+          <div class="post"><div class="post-title">Das Labor: was passiert im Hintergrund?</div><small>Sorgfalt, Identitätssicherheit, Teamarbeit.</small></div>
+          <div class="post"><div class="post-title">Warum ein Spermiogramm dazugehört</div><small>Sachlich, entstigmatisierend, ohne Schuldzuweisung.</small></div>
+        </div>
+        <div class="week">
+          <div class="week-label">Woche 4</div>
+          <div class="post"><div class="post-title">Drei häufige Sorgen vor dem Erstgespräch</div><small>Emotionale Entlastung und Orientierung.</small></div>
+          <div class="post"><div class="post-title">Team-/Ärztinnenvorstellung</div><small>Nähe, Vertrauen, Schwerpunkte, Haltung.</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>5. Freigabeprozess — möglichst einfach</h2>
+      <ol class="approval">
+        <li>Content-Entwürfe werden gesammelt vorbereitet.</li>
+        <li>Eine Ärztin prüft medizinische Korrektheit.</li>
+        <li>Eine Person prüft Praxisdetails: Namen, Abläufe, Ton, Kontaktinfos.</li>
+        <li>Nach Freigabe werden die Posts geplant und veröffentlicht.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>6. Was wir jetzt entscheiden müssen</h2>
+      <div class="checklist">
+        <div class="check"><strong>1. Passt die Grundrichtung?</strong><br>Ruhig, professionell, vertrauensbildend, nicht influencerig.</div>
+        <div class="check"><strong>2. Sind die vier Content-Säulen passend?</strong><br>Orientierung, Medizin einfach erklärt, Vertrauen & Team, häufige Fragen.</div>
+        <div class="check"><strong>3. Welche der ersten 8 Themen sollen wir zuerst ausarbeiten?</strong><br>Vorschlag: alle 8 als erstes Monatspaket.</div>
+        <div class="check"><strong>4. Wer übernimmt die medizinische Freigabe?</strong><br>Eine Ärztin pro Monat reicht als Start.</div>
+        <div class="check"><strong>5. Dürfen wir mit einem ersten 4-Wochen-Paket starten?</strong><br>Danach kurze Auswertung und Anpassung.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>7. Nächster Schritt nach Go</h2>
+      <p>Nach Freigabe der Richtung erstellen wir finale Captions, einfache Bild-/Carousel-Ideen, Story-Vorlagen, einen Veröffentlichungsplan und Standardantworten für Kommentare/DMs.</p>
+      <p><strong>Empfehlung:</strong> mit einem kleinen, sauberen Startpaket live gehen — nicht auf die perfekte Gesamtstrategie warten.</p>
+      <p class="footer-note">Stand: 01.06.2026 · Entwurf zur internen Abstimmung</p>
+    </section>
+  </main>
+</body>
+</html>
